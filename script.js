@@ -103,12 +103,15 @@ function writePassword() {
   var passLength = parseInt(prompt("How many characters would you like your password to be?"))
   if (isNaN(passLength)) {
     alert("You must enter a number.")
+    writePassword();
   }
   else if (passLength < 8) {
     alert("Passwords must be at least 8 characters long.")
+    writePassword();
   }
   else if (passLength > 128) {
     alert("Passwords cannot be longer than 128 characters.")
+    writePassword();
   }
 
   var passUp = confirm("Would you like upper case letters in your password?");
